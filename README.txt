@@ -1,6 +1,15 @@
  0 A.D. Introductory Information
 =================================
 
+**Build Script:**
+    git clone https://github.com/ForOPC/0ad.git
+    cd 0ad
+    sudo apt-get install libsdl2-dev
+    sudo apt-get install libopenal-dev
+    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
+    make
+
+
 0 A.D. (pronounced "zero ey-dee") is a free, open-source, cross-platform
 real-time strategy game of ancient warfare.
 

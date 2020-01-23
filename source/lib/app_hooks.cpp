@@ -1,7 +1,7 @@
 #include "precompiled.h"
-#include "lib/app_hooks.h"
+#include "app_hooks.h"
 
-#include "lib/sysdep/sysdep.h"
+#include "sysdep/sysdep.h"
 
 #include <cstdio>
 

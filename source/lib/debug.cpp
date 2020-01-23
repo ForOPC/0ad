@@ -1,45 +1,19 @@
-/* Copyright (C) 2010 Wildfire Games.
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be included
- * in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
- * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
-/*
- * platform-independent debug support code.
- */
-
 #include "precompiled.h"
-#include "lib/debug.h"
+#include "debug.h"
 
 #include <cstdarg>
 #include <cstring>
 #include <cstdio>
 
-#include "lib/alignment.h"
-#include "lib/app_hooks.h"
-#include "lib/fnv_hash.h"
-#include "lib/sysdep/vm.h"
-#include "lib/sysdep/cpu.h"	// cpu_CAS
-#include "lib/sysdep/sysdep.h"
+#include "alignment.h"
+#include "app_hooks.h"
+#include "fnv_hash.h"
+#include "sysdep/vm.h"
+#include "sysdep/cpu.h"	// cpu_CAS
+#include "sysdep/sysdep.h"
 
 #if OS_WIN
-# include "lib/sysdep/os/win/wdbg_heap.h"
+# include "sysdep/os/win/wdbg_heap.h"
 #endif
 
 static const StatusDefinition debugStatusDefinitions[] = {

@@ -1,25 +1,3 @@
-/* Copyright (C) 2012 Wildfire Games.
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be included
- * in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
- * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
 #ifndef INCLUDED_POSIX_AIO
 #define INCLUDED_POSIX_AIO
 
@@ -29,7 +7,7 @@
 #include <fcntl.h>
 
 #if OS_WIN
-# include "lib/sysdep/os/win/wposix/waio.h"
+# include "../sysdep/os/win/wposix/waio.h"
 #elif OS_ANDROID || OS_OPENBSD
 // Android doesn't provide aio.h. We don't actually use aio on Linuxes (see
 // CONFIG2_FILE_ENABLE_AIO) but we use its symbols and structs, so define
@@ -63,6 +41,6 @@ struct aiocb
 # include <aio.h>
 #endif
 
-#include "lib/posix/posix_errno.h"	// for user convenience
+#include "posix_errno.h"	// for user convenience
 
 #endif	// #ifndef INCLUDED_POSIX_AIO

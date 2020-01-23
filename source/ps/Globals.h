@@ -18,9 +18,9 @@
 #ifndef INCLUDED_PS_GLOBALS
 #define INCLUDED_PS_GLOBALS
 
-#include "lib/input.h"
-#include "lib/frequency_filter.h"
-#include "ps/KeyName.h"
+#include "../lib/input.h"
+#include "../lib/frequency_filter.h"
+#include "KeyName.h"
 
 #include <map>
 

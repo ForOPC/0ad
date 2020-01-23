@@ -1,27 +1,3 @@
-/* Copyright (C) 2014 Wildfire Games.
- * This file is part of 0 A.D.
- *
- * 0 A.D. is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * 0 A.D. is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with 0 A.D.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/**
- * File        : CStr.h
- * Project     : engine
- * Description : Contains CStr class which is a versatile class for making string use easy.
- *			   : The class implements a series of string manipulation/formatting functions.
- **/
-
 #ifndef INCLUDED_CSTR
 #define INCLUDED_CSTR
 
@@ -53,7 +29,7 @@ enum PS_TRIM_MODE
 #endif
 
 #include <string>
-#include "ps/utf16string.h"
+#include "utf16string.h"
 
 class CStr8;
 class CStrW;

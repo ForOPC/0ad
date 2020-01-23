@@ -1,42 +1,15 @@
-/* Copyright (C) 2018 Wildfire Games.
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be included
- * in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
- * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
-/*
- * provide asynchronous and synchronous I/O with hooks to allow
- * overlapped processing or progress reporting.
- */
-
 #ifndef INCLUDED_IO
 #define INCLUDED_IO
 
-#include "lib/config2.h"
-#include "lib/alignment.h"
-#include "lib/bits.h"
-#include "lib/timer.h"
-#include "lib/file/file.h"
-#include "lib/sysdep/filesystem.h"	// wtruncate
-#include "lib/posix/posix_aio.h"	// LIO_READ, LIO_WRITE
+#include "../../config2.h"
+#include "../../alignment.h"
+#include "../../bits.h"
+#include "../../timer.h"
+#include "../../file/file.h"
+#include "../../sysdep/filesystem.h"	// wtruncate
+#include "../../posix/posix_aio.h"	// LIO_READ, LIO_WRITE
 
-#include "lib/allocators/unique_range.h"
+#include "../../allocators/unique_range.h"
 
 namespace ERR
 {

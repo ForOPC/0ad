@@ -1,39 +1,3 @@
-/* Copyright (C) 2017 Wildfire Games.
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be included
- * in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
- * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
-/*
- * Path string class, similar to boost::filesystem::basic_path.
- */
-
-// notes:
-// - this module is independent of lib/file so that it can be used from
-//   other code without pulling in the entire file manager.
-// - there is no restriction on buffer lengths except the underlying OS.
-//   input buffers must not exceed PATH_MAX chars, while outputs
-//   must hold at least that much.
-// - unless otherwise mentioned, all functions are intended to work with
-//   native and VFS paths.
-//   when reading, both '/' and SYS_DIR_SEP are accepted; '/' is written.
-
 #ifndef INCLUDED_PATH
 #define INCLUDED_PATH
 
@@ -41,7 +5,7 @@
 # include "boost/functional/hash.hpp"
 #endif
 
-#include "lib/utf8.h"
+#include "utf8.h"
 
 #include <cstring>
 

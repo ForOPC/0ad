@@ -1,34 +1,7 @@
-/* Copyright (C) 2009 Wildfire Games.
- * This file is part of 0 A.D.
- *
- * 0 A.D. is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * 0 A.D. is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with 0 A.D.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/*
- * CFrustum is a collection of planes which define a viewing space.
- */
-
-/*
-Usually associated with the camera, there are 6 planes which define the
-view pyramid. But we allow more planes per frustum which may be used for
-portal rendering, where a portal may have 3 or more edges.
-*/
-
 #ifndef INCLUDED_FRUSTUM
 #define INCLUDED_FRUSTUM
 
-#include "maths/Plane.h"
+#include "../maths/Plane.h"
 
 //10 planes should be enough
 #define MAX_NUM_FRUSTUM_PLANES		(10)

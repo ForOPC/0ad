@@ -1,92 +1,3 @@
-/* Copyright (C) 2015 Wildfire Games.
- * This file is part of 0 A.D.
- *
- * 0 A.D. is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * 0 A.D. is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with 0 A.D.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/*
-	Xeromyces - XMB reading library
-*/
-
-/*
-
-Brief outline:
-
-XMB is a binary representation of XML, with some limitations
-but much more efficiency (particularly for loading simple data
-classes that don't need much initialisation).
-
-Main limitations:
- * Can't correctly handle mixed text/elements inside elements -
-   "<div> <b> Text </b> </div>" and "<div> Te<b/>xt </div>" are
-   considered identical.
- * Tries to avoid using strings - you usually have to load the
-   numeric IDs and use them instead.
- * Case-sensitive (but converts all element/attribute names in
-   the XML file to lowercase, so you only have to be careful in
-   the code)
-
-
-Theoretical file structure:
-
-XMB_File {
-	char Header[4]; // because everyone has one; currently "XMB0"
-	u32 Version;
-
-	int ElementNameCount;
-	ZStr8 ElementNames[];
-
-	int AttributeNameCount;
-	ZStr8 AttributeNames[];
-
-	XMB_Node Root;
-}
-
-XMB_Node {
-0)	int Length; // of entire struct, so it can be skipped over
-
-4)	int ElementName;
-
-8)	int AttributeCount;
-12)	int ChildCount;
-
-16)	int ChildrenOffset; // == sizeof(Text)+sizeof(Attributes)
-20)	XMB_Text Text;
-	XMB_Attribute Attributes[];
-	XMB_Node Children[];
-
-}
-
-XMB_Attribute {
-	int Name;
-	ZStr8 Value;
-}
-
-ZStr8 {
-	int Length; // in bytes
-	char* Text; // null-terminated UTF8
-}
-
-XMB_Text {
-20)	int Length; // 0 if there's no text, else 4+sizeof(Text) in bytes including terminator
-	// If Length != 0:
-24)	int LineNumber; // for e.g. debugging scripts
-28)	char* Text; // null-terminated UTF8
-}
-
-*/
-
 #ifndef INCLUDED_XEROXMB
 #define INCLUDED_XEROXMB
 
@@ -100,7 +11,7 @@ XMB_Text {
 # include <map>
 #endif
 
-#include "ps/CStr.h"
+#include "../CStr.h"
 
 // File headers, to make sure it doesn't try loading anything other than an XMB
 extern const char* HeaderMagicStr;

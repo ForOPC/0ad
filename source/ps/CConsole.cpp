@@ -1,50 +1,29 @@
-/* Copyright (C) 2016 Wildfire Games.
- * This file is part of 0 A.D.
- *
- * 0 A.D. is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * 0 A.D. is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with 0 A.D.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/*
- * Implements the in-game console with scripting support.
- */
-
 #include "precompiled.h"
 #include <wctype.h>
 
 #include "CConsole.h"
 
-#include "graphics/FontMetrics.h"
-#include "graphics/ShaderManager.h"
-#include "graphics/TextRenderer.h"
-#include "gui/GUIutil.h"
-#include "gui/GUIManager.h"
-#include "lib/ogl.h"
-#include "lib/sysdep/clipboard.h"
-#include "lib/timer.h"
-#include "lib/utf8.h"
-#include "maths/MathUtil.h"
-#include "network/NetClient.h"
-#include "network/NetServer.h"
-#include "ps/CLogger.h"
-#include "ps/Filesystem.h"
-#include "ps/GameSetup/Config.h"
-#include "ps/Globals.h"
-#include "ps/Hotkey.h"
-#include "ps/Profile.h"
-#include "ps/Pyrogenesis.h"
-#include "renderer/Renderer.h"
-#include "scriptinterface/ScriptInterface.h"
+#include "../graphics/FontMetrics.h"
+#include "../graphics/ShaderManager.h"
+#include "../graphics/TextRenderer.h"
+#include "../gui/GUIutil.h"
+#include "../gui/GUIManager.h"
+#include "../lib/ogl.h"
+#include "../lib/sysdep/clipboard.h"
+#include "../lib/timer.h"
+#include "../lib/utf8.h"
+#include "../maths/MathUtil.h"
+#include "../network/NetClient.h"
+#include "../network/NetServer.h"
+#include "CLogger.h"
+#include "Filesystem.h"
+#include "GameSetup/Config.h"
+#include "Globals.h"
+#include "Hotkey.h"
+#include "Profile.h"
+#include "Pyrogenesis.h"
+#include "../renderer/Renderer.h"
+#include "../scriptinterface/ScriptInterface.h"
 
 CConsole* g_Console = 0;
 

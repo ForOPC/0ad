@@ -18,8 +18,8 @@
 #ifndef INCLUDED_ARCHIVEBUILDER
 #define INCLUDED_ARCHIVEBUILDER
 
-#include "lib/file/vfs/vfs.h"
-#include "ps/CStr.h"
+#include "../lib/file/vfs/vfs.h"
+#include "CStr.h"
 
 /**
  * Packages a mod's files into a distributable archive.
